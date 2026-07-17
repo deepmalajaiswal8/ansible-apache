@@ -23,8 +23,7 @@ jobs:
           EC2_KEY: ${{ secrets.EC2_KEY }}
         run: |
           mkdir -p ~/.ssh
-          printf '%s
-' "$EC2_KEY" > ~/.ssh/ec2.pem
+          printf '%s\n' "$EC2_KEY" > ~/.ssh/ec2.pem
           chmod 600 ~/.ssh/ec2.pem
 
       - name: Run Ansible playbook
